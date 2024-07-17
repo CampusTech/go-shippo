@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/CampusTech/go-shippo/models"
+	"github.com/campustech/go-shippo/models"
 )
 
 // CreateCarrierAccount creates a new carrier account object.

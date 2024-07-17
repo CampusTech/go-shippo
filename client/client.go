@@ -9,8 +9,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/CampusTech/go-shippo/errors"
-	"github.com/CampusTech/go-shippo/models"
+	"github.com/campustech/go-shippo/errors"
+	"github.com/campustech/go-shippo/models"
 )
 
 const (

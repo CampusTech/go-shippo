@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/CampusTech/go-shippo/models"
+	"github.com/campustech/go-shippo/models"
 )
 
 // GetTrackingUpdate requests the tracking status of a shipment.

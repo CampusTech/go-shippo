@@ -1,6 +1,6 @@
 package shippo
 
-import "github.com/CampusTech/go-shippo/client"
+import "github.com/campustech/go-shippo/client"
 
 const (
 	APIVersion20140211 = "2014-02-11"

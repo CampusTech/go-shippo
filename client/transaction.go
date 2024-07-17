@@ -5,7 +5,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/CampusTech/go-shippo/models"
+	"github.com/campustech/go-shippo/models"
 )
 
 // PurchaseShippingLabel creates a new transaction object and purchases the shipping label for the provided rate.
