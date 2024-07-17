@@ -1,6 +1,6 @@
 # Shippo API Golang Wrapper
 
-Documentation: https://godoc.org/github.com/OrderMyGear/go-shippo/client
+Documentation: https://godoc.org/github.com/CampusTech/go-shippo/client
 
 ## Examples
 ```go
@@ -12,9 +12,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/OrderMyGear/go-shippo"
-	"github.com/OrderMyGear/go-shippo/client"
-	"github.com/OrderMyGear/go-shippo/models"
+	"github.com/CampusTech/go-shippo"
+	"github.com/CampusTech/go-shippo/client"
+	"github.com/CampusTech/go-shippo/models"
 )
 
 func main() {
@@ -122,4 +122,4 @@ func dump(v interface{}) string {
 
 ```
 
-See [more examples](https://github.com/OrderMyGear/go-shippo/tree/master/_examples).
+See [more examples](https://github.com/CampusTech/go-shippo/tree/master/_examples).

@@ -5,7 +5,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/OrderMyGear/go-shippo/models"
+	"github.com/CampusTech/go-shippo/models"
 )
 
 // CreateOrder creates a new order object.

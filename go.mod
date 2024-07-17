@@ -1,3 +1,3 @@
-module github.com/OrderMyGear/go-shippo
+module github.com/CampusTech/go-shippo
 
 go 1.19
