@@ -23,16 +23,26 @@ type TrackingStatus struct {
 	AddressFrom     *TrackingStatusLocation `json:"address_from,omitempty"`
 	AddressTo       *TrackingStatusLocation `json:"address_to,omitempty"`
 	ETA             time.Time               `json:"eta"`
+	OriginalETA     time.Time               `json:"original_eta"`
 	ServiceLevel    *ServiceLevel           `json:"servicelevel,omitempty"`
 	TrackingStatus  *TrackingStatusDict     `json:"tracking_status,omitempty"`
 	TrackingHistory []*TrackingStatusDict   `json:"tracking_history,omitempty"`
+	Messages        []*OutputMessage        `json:"messages,omitempty"`
+	Transaction     string                  `json:"transaction,omitempty"`
+	Test            bool                    `json:"test"`
 }
 
 type TrackingStatusDict struct {
+	CommonOutputFields
 	Status        string                  `json:"status,omitempty"`
 	StatusDetails string                  `json:"status_details,omitempty"`
 	StatusDate    time.Time               `json:"status_date,omitempty"`
 	Location      *TrackingStatusLocation `json:"location,omitempty"`
+	Substatus     struct {
+		Code           string `json:"code"`
+		Text           string `json:"text"`
+		ActionRequired bool   `json:"action_required"`
+	} `json:"substatus"`
 }
 
 type TrackingStatusLocation struct {
