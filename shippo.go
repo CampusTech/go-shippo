@@ -11,10 +11,20 @@ const (
 
 // NewClient creates a new Shippo client.
 func NewClient(privateToken string) *client.Client {
-	return client.NewClient(privateToken, "")
+	return client.NewClient(privateToken, "", "")
 }
 
 // NewClientWithVersion creates a new Shippo client with API version explicitly specified.
 func NewClientWithVersion(privateToken, apiVersion string) *client.Client {
-	return client.NewClient(privateToken, apiVersion)
+	return client.NewClient(privateToken, apiVersion, "")
+}
+
+// NewClientWithPlatformAccountID creates a new Shippo client with platform account ID explicitly specified.
+func NewClientWithPlatformAccountID(privateToken, platformAccountID string) *client.Client {
+	return client.NewClient(privateToken, "", platformAccountID)
+}
+
+// NewClientWithVersionAndPlatformAccountID creates a new Shippo client with API version and platform account ID explicitly specified.
+func NewClientWithVersionAndPlatformAccountID(privateToken, apiVersion, platformAccountID string) *client.Client {
+	return client.NewClient(privateToken, apiVersion, platformAccountID)
 }

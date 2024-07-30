@@ -18,18 +18,20 @@ const (
 )
 
 type Client struct {
-	privateToken string
-	apiVersion   string
-	logger       *log.Logger
+	privateToken      string
+	apiVersion        string
+	platformAccountID string
+	logger            *log.Logger
 }
 
 type listOutputCallback func(v json.RawMessage) error
 
 // NewClient creates a new Shippo API client instance.
-func NewClient(privateToken, apiVersion string) *Client {
+func NewClient(privateToken, apiVersion, platformAccountID string) *Client {
 	return &Client{
-		privateToken: privateToken,
-		apiVersion:   apiVersion,
+		privateToken:      privateToken,
+		apiVersion:        apiVersion,
+		platformAccountID: platformAccountID,
 	}
 }
 
@@ -144,6 +146,9 @@ func (c *Client) createRequest(method, url string, bodyObject interface{}) (req 
 	req.Header.Set("Authorization", "ShippoToken "+c.privateToken)
 	if c.apiVersion != "" {
 		req.Header.Set("Shippo-API-Version", c.apiVersion)
+	}
+	if c.platformAccountID != "" {
+		req.Header.Set("Shippo-Account-ID", c.platformAccountID)
 	}
 
 	// no keep-alive
