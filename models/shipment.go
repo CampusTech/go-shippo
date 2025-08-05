@@ -64,6 +64,7 @@ type ShipmentExtra struct {
 	USPSSortType            string             `json:"usps_sort_type,omitempty"`
 	USPSEntryFacility       string             `json:"usps_entry_facility,omitempty"`
 	DangerousGoodsCode      string             `json:"dangerous_goods_code,omitempty"`
+	DangerousGoods          *DangerousGoods    `json:"dangerous_goods,omitempty"`
 	IsReturn                bool               `json:"is_return,omitempty"`
 	Reference1              string             `json:"reference_1,omitempty"`
 	Reference2              string             `json:"reference_2,omitempty"`
@@ -87,6 +88,20 @@ type ShipmentBilling struct {
 	Account string `json:"account"`
 	Zip     string `json:"zip"`
 	Country string `json:"country"`
+}
+
+type DangerousGoods struct {
+	Contains           bool                `json:"contains"`
+	BiologicalMaterial *BiologicalMaterial `json:"biological_material,omitempty"`
+	LithiumBatteries   *LithiumBatteries   `json:"lithium_batteries,omitempty"`
+}
+
+type BiologicalMaterial struct {
+	Contains bool `json:"contains"`
+}
+
+type LithiumBatteries struct {
+	Contains bool `json:"contains"`
 }
 
 // See https://goshippo.com/docs/reference#shipments
